@@ -7,27 +7,27 @@ FROM node:24-slim
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       build-essential \
+      g++ \
       gpiod \
       libgpiod2 \
       libgpiod-dev \
       libnode-dev \
+      python3 \
       sudo && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
-# Copy package files if you prefer using package.json, or install globally here.
-# For simplicity, we install the dependencies directly:
-RUN npm install node-libgpiod
-
 # Copy your script into the container
 COPY . .
+
+# Copy package files if you prefer using package.json, or install globally here.
+# For simplicity, we install the dependencies directly:
+RUN npm install
 
 # Optional: make sure the script is executable
 RUN chmod +x bin/run.ts
 
-# Ensure /var/run exists (it does in base image, but we create our PID directory if needed)
-RUN mkdir -p /var/run
 
 # If you rely on 'sudo' inside the script, make sure the user has permissions;
 # simplest is to run as root (default in this image) and you could omit 'sudo'
