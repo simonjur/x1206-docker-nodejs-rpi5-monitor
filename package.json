@@ -1,0 +1,21 @@
+{
+  "name": "x1200-ups-monitor",
+  "version": "1.0.0",
+  "description": "UPS battery monitor for Suptronics X1206 on Raspberry Pi (Node.js port)",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node x1200-ups-monitor.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "i2c-bus": "^5.2.3",
+    "node-libgpiod": "^0.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
+}
