@@ -1,9 +1,5 @@
-FROM node:24-slim
+FROM node:24-slim AS builder
 
-# Install required packages:
-#  - i2c-tools, libi2c-dev: I2C support
-#  - gpiod, libgpiod-dev: GPIO via libgpiod
-#  - sudo: to allow 'sudo shutdown -h now' if desired
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       build-essential \
@@ -18,20 +14,26 @@ RUN apt-get update && \
 
 WORKDIR /usr/src/app
 
-# Copy your script into the container
-COPY . .
+COPY package*.json ./
 
-# Copy package files if you prefer using package.json, or install globally here.
-# For simplicity, we install the dependencies directly:
 RUN npm install
 
-# Optional: make sure the script is executable
+COPY . .
+
 RUN chmod +x bin/run.ts
 
+FROM node:24-slim
 
-# If you rely on 'sudo' inside the script, make sure the user has permissions;
-# simplest is to run as root (default in this image) and you could omit 'sudo'
-# in the Node script and just call `shutdown -h now`.
-#
-# ENTRYPOINT runs the monitor script
-ENTRYPOINT ["node", "bin/run.ts"]
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      gpiod \
+      libgpiod2 && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app/package*.json ./
+COPY . .
+
+ENTRYPOINT ["node", "bin/exporter.ts"]

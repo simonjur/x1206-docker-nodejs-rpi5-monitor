@@ -17,4 +17,7 @@ TODO:
 - tidy up
 - prometheus exporter
 - grafana dashboard
+  - voltage
+  - capacity
+  - ac power state
 - linter/prettier
