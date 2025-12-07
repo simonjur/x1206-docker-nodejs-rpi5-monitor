@@ -8,16 +8,16 @@ import gpiod from "node-libgpiod";
 
 // -------------------- User-configurable variables --------------------
 
-const SHUTDOWN_THRESHOLD = 3;        // Number of consecutive failures required for shutdown
-const SLEEP_TIME_MS = 60_000;       // Time in ms to wait between failure checks
-const Loop = false;                 // If false, exit after a normal pass
+const SHUTDOWN_THRESHOLD = 3; // Number of consecutive failures required for shutdown
+const SLEEP_TIME_MS = 60_000; // Time in ms to wait between failure checks
+const Loop = false; // If false, exit after a normal pass
 
 // -------------------- Constants / Config --------------------
 
 const PID_FILE = "X1200.pid";
 const I2C_BUS_NUMBER = 1;
 const BATTERY_I2C_ADDRESS = 0x36;
-const PLD_PIN = 6;                  // GPIO line number
+const PLD_PIN = 6; // GPIO line number
 const GPIO_CHIP_NAME = "gpiochip0"; // As per Python comment for kernel >= 6.6.45
 
 // -------------------- Helper functions --------------------
@@ -145,8 +145,8 @@ async function main(): Promise<void> {
 
                 console.log(
                     `Capacity: ${capacity.toFixed(2)}% (${batteryStatus}), ` +
-                    `AC Power State: ${acPowerState === 1 ? "Plugged in" : "Unplugged"}, ` +
-                    `Voltage: ${voltage.toFixed(2)}V`
+                        `AC Power State: ${acPowerState === 1 ? "Plugged in" : "Unplugged"}, ` +
+                        `Voltage: ${voltage.toFixed(2)}V`,
                 );
 
                 if (acPowerState === 0) {

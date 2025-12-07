@@ -5,4 +5,4 @@
  * - ac power state (on/off)
  * - charging state (enabled/disabled)
  */
-import '../src/exporter.ts';
+import "../src/exporter.ts";

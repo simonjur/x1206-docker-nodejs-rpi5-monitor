@@ -1,6 +1,6 @@
-import {BoardReader} from "./board.ts";
+import { BoardReader } from "./board.ts";
 
-async function run () {
+async function run() {
     try {
         const reader = new BoardReader();
         const data = await reader.getInfo();

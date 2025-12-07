@@ -5,4 +5,4 @@
  * - ac power state (on/off)
  * - charging state (enabled/disabled)
  */
-import '../src/status.ts';
+import "../src/status.ts";
