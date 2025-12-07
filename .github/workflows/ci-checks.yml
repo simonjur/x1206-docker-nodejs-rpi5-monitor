@@ -1,4 +1,4 @@
-name: ci-checks.yml
+name: Checks
 on:
     push:
         branches:
@@ -34,11 +34,31 @@ jobs:
                   node-version: "24"
             - name: Uninstall native dependency - not needed for linting
               run: |
-                npm uninstall node-libgpiod
+                  npm uninstall node-libgpiod
             - name: Install dependencies
               run: |
-                npm ci
+                  npm ci
             - name: Run ESLint
               run: |
                   node --run lint
                   echo "✅ Linting passed successfully!"
+
+    tsc:
+        name: TS type check
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v6
+          - name: Set up Node.js
+            uses: actions/setup-node@v6
+            with:
+              node-version: "24"
+          - name: Uninstall native dependency - not needed for linting
+            run: |
+              npm uninstall node-libgpiod
+          - name: Install dependencies
+            run: |
+              npm ci
+          - name: Run ESLint
+            run: |
+              node --run tsc
+              echo "✅ Type check passed successfully!"
