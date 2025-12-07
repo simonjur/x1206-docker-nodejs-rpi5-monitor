@@ -36,5 +36,6 @@ jobs:
               run: npm ci --omit=peer
             - name: Run ESLint
               run: |
+                  npm i jiti -g
                   npx eslint .
                   echo "✅ Linting passed successfully!"
