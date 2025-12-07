@@ -1,6 +1,6 @@
 services:
     x1200-ups-exporter:
-        image: ghcr.io/imonjur/X1206-docker-nodejs-rpi5-monitor/x1206-nodejs-exporter:latest
+        image: ghcr.io/imonjur/x1206-docker-nodejs-rpi5-monitor/x1206-nodejs-exporter:latest
         build: .
         container_name: x1200-ups-exporter
         restart: unless-stopped

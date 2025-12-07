@@ -2,7 +2,7 @@ import express from "express";
 import type { Request, Response } from "express";
 import * as client from "prom-client";
 import { BoardReader } from "./board-reader.ts";
-import * as process from "node:process";
+import process from "node:process";
 
 const LISTEN_PORT = process.env.LISTEN_PORT ?? 3000;
 
