@@ -8,8 +8,8 @@
         "start": "node x1200-ups-monitor.js",
         "exporter": "node bin/exporter.ts",
         "status": "node bin/status.ts",
-        "format:fix": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:fix": "prettier --write --experimental-cli .",
+        "format:check": "prettier --check --experimental-cli ."
     },
     "author": "",
     "license": "MIT",
