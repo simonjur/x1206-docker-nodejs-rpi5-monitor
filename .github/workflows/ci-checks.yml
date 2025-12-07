@@ -22,6 +22,6 @@ jobs:
               with:
                   node-version: "24"
             - name: Install dependencies
-              run: npm ci --omit=production
+              run: npm ci --omit=peer
             - name: Run Prettier check
               run: node --run format:check
