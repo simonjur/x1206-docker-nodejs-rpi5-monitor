@@ -21,8 +21,8 @@ jobs:
               run: npm ci --omit=peer
             - name: Run Prettier check
               run: |
-                node --run format:check
-                ✅ Code formatting is correct!
+                  node --run format:check
+                  ✅ Code formatting is correct!
     lint:
         name: Lint codebase
         runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
               run: npm ci --omit=peer
             - name: Run ESLint
               run: |
-                node --run lint
-                ✅ Linting passed successfully!
+                  node --run lint
+                  ✅ Linting passed successfully!
