@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
+    - name: Install jq tool
+      run: |
+        sudo apt-get update
+        sudo apt-get install build-essential g++ gpiod libgpiod2 libgpiod-dev libnode-dev python3
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
