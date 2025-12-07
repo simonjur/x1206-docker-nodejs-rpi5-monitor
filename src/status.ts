@@ -1,4 +1,4 @@
-import { BoardReader } from "./board.ts";
+import { BoardReader } from "./board-reader.ts";
 
 async function run() {
     try {
