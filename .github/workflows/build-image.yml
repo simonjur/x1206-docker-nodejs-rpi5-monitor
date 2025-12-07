@@ -11,6 +11,9 @@ on:
             - Dockerfile
             - tsconfig.json
 
+    workflow_dispatch:
+        inputs: {}
+
 permissions:
     packages: write
 
