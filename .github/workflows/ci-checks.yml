@@ -32,9 +32,12 @@ jobs:
               uses: actions/setup-node@v6
               with:
                   node-version: "24"
+            - name: Uninstall native dependency - not needed for linting
+              run: |
+                npm uninstall node-libgpiod
             - name: Install dependencies
-              run: npm uninstall node-libgpiod
-            - run: npm ci
+              run: |
+                npm ci
             - name: Run ESLint
               run: |
                   node --run lint
