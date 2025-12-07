@@ -33,9 +33,9 @@ jobs:
               with:
                   node-version: "24"
             - name: Install dependencies
-              run: npm ci --omit=peer
+              run: npm uninstall node-libgpiod
+            - run: npm ci
             - name: Run ESLint
               run: |
-                  npm i jiti -g
-                  npx eslint .
+                  node --run lint
                   echo "✅ Linting passed successfully!"
