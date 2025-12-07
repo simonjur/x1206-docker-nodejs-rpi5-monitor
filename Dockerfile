@@ -18,10 +18,6 @@ COPY package*.json ./
 
 RUN npm ci --omit=dev
 
-COPY . .
-
-RUN chmod +x bin/run.ts
-
 FROM node:24-slim
 
 RUN apt-get update && \
