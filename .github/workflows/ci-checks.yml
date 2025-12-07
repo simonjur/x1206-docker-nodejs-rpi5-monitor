@@ -2,26 +2,26 @@ name: ci-checks.yml
 on:
     push:
         branches:
-        - main
+            - main
     pull_request:
         branches:
-        - main
+            - main
 
 jobs:
-  format:
-    name: Check code formatting
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v6
-    - name: Install jq tool
-      run: |
-        sudo apt-get update
-        sudo apt-get install build-essential g++ gpiod libgpiod2 libgpiod-dev libnode-dev python3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '24'
-    - name: Install dependencies
-      run: npm ci
-    - name: Run Prettier check
-      run: node --run format:check
+    format:
+        name: Check code formatting
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+            #    - name: Install jq tool
+            #      run: |
+            #        sudo apt-get update
+            #        sudo apt-get install build-essential g++ gpiod libgpiod2 libgpiod-dev libnode-dev python3
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "24"
+            - name: Install dependencies
+              run: npm ci --only=dev
+            - name: Run Prettier check
+              run: node --run format:check
