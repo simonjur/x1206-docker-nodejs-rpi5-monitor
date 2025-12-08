@@ -4,6 +4,10 @@ Recently I bought [Suptronics X1206 V1.1 UPS board](https://suptronics.com/Raspb
 and put together simple Prometheus exporter for it (based on original python scripts) 
 so I can monitor it with Grafana.
 
+<p align="center">
+    <img src="docs/grafana_board.png" alt="grafana dashbaord screenshot" width="600"  />
+</p>
+
 ## Status
 [![Checks](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/ci-checks.yml/badge.svg)](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/ci-checks.yml)
 [![Build image](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml/badge.svg)](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml)
