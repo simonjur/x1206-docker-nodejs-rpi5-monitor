@@ -17,10 +17,10 @@
     "engines": {
         "node": ">=24"
     },
-    "peerDependencies": {
-        "node-libgpiod": "^0.5.3"
-    },
     "dependencies": {
+        "node-libgpiod": "^0.5.3",
+        "commander": "^14.0.2",
+        "console-table-printer": "^2.15.0",
         "express": "^5.2.1",
         "i2c-bus": "^5.2.3",
         "prom-client": "^15.1.3"
