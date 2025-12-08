@@ -9,6 +9,10 @@ so I can monitor it with Grafana.
 [![Build image](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml/badge.svg)](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml)
 ![Node.js](https://img.shields.io/badge/node-24.x-brightgreen?logo=node.js&logoColor=white)
 
+| Platform                    | Tested |
+|----------------------------|--------|
+| Raspberry Pi 5, Debian 12 (bookworm) | ✅      |
+| Raspberry Pi 5, Debian 13 (trixie)   | ❓      |
 
 ## Building the image
 local image build using docker buildx:
