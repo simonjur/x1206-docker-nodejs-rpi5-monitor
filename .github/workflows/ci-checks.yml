@@ -17,8 +17,11 @@ jobs:
               uses: actions/setup-node@v6
               with:
                   node-version: "24"
+            - name: Uninstall native dependency - not needed for formatter
+              run: |
+                npm uninstall node-libgpiod
             - name: Install dependencies
-              run: npm ci --omit=peer
+              run: npm ci
             - name: Run Prettier check
               run: |
                   node --run format:check
