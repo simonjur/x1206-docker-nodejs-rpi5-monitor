@@ -1,7 +1,7 @@
 # X1206-docker-nodejs-rpi5-monitor
 
 Recently I bought [Suptronics X1206 V1.1 UPS board](https://suptronics.com/Raspberrypi/Power_mgmt/x1206-v1.1.html) 
-and put together simple Prometheus exporter for it (based on original python scripts) 
+and put together simple Prometheus exporter for it (based on [original python scripts](https://github.com/suptronics/x120x)) 
 so I can monitor it with Grafana.
 
 <p align="center">
