@@ -19,7 +19,7 @@ jobs:
                   node-version: "24"
             - name: Uninstall native dependency - not needed for formatter
               run: |
-                npm uninstall node-libgpiod
+                  npm uninstall node-libgpiod
             - name: Install dependencies
               run: npm ci
             - name: Run Prettier check
