@@ -12,6 +12,7 @@ so I can monitor it with Grafana.
 [![Checks](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/ci-checks.yml/badge.svg)](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/ci-checks.yml)
 [![Build image](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml/badge.svg)](https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/actions/workflows/build-image.yml)
 ![Node.js](https://img.shields.io/badge/node-24.x-brightgreen?logo=node.js&logoColor=white)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=simonjur_x1206-docker-nodejs-rpi5-monitor&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=simonjur_x1206-docker-nodejs-rpi5-monitor)
 
 | Platform                    | Tested |
 |----------------------------|--------|
