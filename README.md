@@ -18,7 +18,25 @@ so I can monitor it with Grafana.
 | Raspberry Pi 5, Debian 12 (bookworm) | ✅      |
 | Raspberry Pi 5, Debian 13 (trixie)   | ❓      |
 
-## Building the image
+## Running through composer
+
+This is how I run it on my Raspberry pi 5:
+
+> [!INFO]
+> Prebuilt for arm/x64 https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/pkgs/container/x1206-docker-nodejs-rpi5-monitor%2Fx1206-nodejs-exporter on ghcr.io
+> ```bash
+> docker pull ghcr.io/simonjur/x1206-docker-nodejs-rpi5-monitor/x1206-nodejs-exporter:latest
+> ```
+
+```bash
+git clone git@github.com:simonjur/x1206-docker-nodejs-rpi5-monitor.git
+cd x1206-docker-nodejs-rpi5-monitor
+docker compose up -d
+```
+
+## Development 
+
+### Building the image manually
 local image build using docker buildx:
 
 ```bash
@@ -30,7 +48,7 @@ or with docker compose:
 docker compose build
 ```
 
-## Running in docker
+### Running in docker
 local docker run:
 
 ```bash
@@ -42,7 +60,7 @@ local docker compose:
 docker compose up -d
 ```
 
-## Running locally without docker
+### Running locally without docker
 Install dependencies:
 
 > [!WARNING]
@@ -69,4 +87,3 @@ should print something like:
 │ Battery status │  Full │
 └────────────────┴───────┘
 ```
-
