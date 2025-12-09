@@ -1,6 +1,7 @@
 import { BoardReader } from "./board-reader.ts";
 import { Command } from "commander";
 import { printTable } from "console-table-printer";
+import * as process from "node:process";
 
 const program = new Command();
 
@@ -34,7 +35,7 @@ async function run(json: boolean) {
         }
     } catch (err) {
         console.error("Error reading board data:", err);
-        return;
+        process.exit(1);
     }
 }
 
