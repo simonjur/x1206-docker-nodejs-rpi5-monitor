@@ -65,7 +65,7 @@ jobs:
                   npm ci
             - name: Run ESLint
               run: |
-                  node --run test
+                  node --run test:coverage
                   echo "✅ Linting passed successfully!"
 
 #    tsc:
