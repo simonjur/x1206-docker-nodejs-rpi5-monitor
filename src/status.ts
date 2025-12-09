@@ -35,7 +35,7 @@ async function run(json: boolean) {
         }
     } catch (err) {
         console.error("Error reading board data:", err);
-        process.exit(1)
+        process.exit(1);
     }
 }
 
