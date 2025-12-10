@@ -65,8 +65,14 @@ jobs:
                   npm ci
             - name: Run ESLint
               run: |
-                  node --run test
-                  echo "✅ Linting passed successfully!"
+                  node --run test:coverage
+                  echo "✅ Tests passed successfully!"
+
+            - name: SonarCloud Scan
+              uses: SonarSource/sonarqube-scan-action@v6.0.0
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 #    tsc:
 #        name: TS type check

@@ -13,9 +13,6 @@ export class BoardReader {
     pldLine: gpiod.Line;
 
     public constructor() {
-        // const rawBus = i2c.openSync(I2C_BUS_NUMBER);
-        // const rawBus = openPromisified(I2C_BUS_NUMBER);
-
         this.chip = new gpiod.Chip(GPIO_CHIP_NAME);
         this.pldLine = this.chip.getLine(PLD_PIN);
     }
@@ -47,22 +44,27 @@ export class BoardReader {
         // Equivalent to read_word_data(address, 4) in Python
         const raw = await bus.readWord(BATTERY_I2C_ADDRESS, 4);
         const swapped = swap16(raw);
-        return swapped / 256.0;
+        return swapped / 256;
+    }
+
+    /**
+     * Reads the AC power state from the PLD GPIO line.
+     * 0 = unplugged, 1 = plugged in
+     * @private
+     */
+    private getAcPowerState() {
+        return this.pldLine.getValue();
     }
 
     public async getInfo() {
         const bus: PromisifiedBus = await openPromisified(I2C_BUS_NUMBER);
         this.pldLine.requestInputMode("PLD");
 
-        let acPowerState = 1;
-        let voltage = 0;
-        let capacity = 0;
-
         // Read AC power state: 1 = plugged in, 0 = unplugged
-        acPowerState = this.pldLine.getValue();
+        const acPowerState = this.getAcPowerState();
 
-        voltage = await this.readVoltage(bus);
-        capacity = await this.readCapacity(bus);
+        const voltage = await this.readVoltage(bus);
+        const capacity = await this.readCapacity(bus);
         const batteryStatus = this.getBatteryStatus(voltage);
 
         await this.pldLine.release();
