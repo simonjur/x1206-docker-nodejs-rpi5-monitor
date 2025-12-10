@@ -13,9 +13,6 @@ export class BoardReader {
     pldLine: gpiod.Line;
 
     public constructor() {
-        // const rawBus = i2c.openSync(I2C_BUS_NUMBER);
-        // const rawBus = openPromisified(I2C_BUS_NUMBER);
-
         this.chip = new gpiod.Chip(GPIO_CHIP_NAME);
         this.pldLine = this.chip.getLine(PLD_PIN);
     }
