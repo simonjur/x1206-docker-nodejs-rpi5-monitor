@@ -5,8 +5,8 @@ RUN apt-get update && \
       build-essential \
       g++ \
       gpiod \
-      libgpiod2 \
       libgpiod-dev \
+      libgpiod2 \
       libnode-dev \
       python3 \
       sudo && \
