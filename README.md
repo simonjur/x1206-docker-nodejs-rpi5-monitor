@@ -24,7 +24,7 @@ so I can monitor it with Grafana (dashboard is [here](https://grafana.com/grafan
 
 This is how I run it on my Raspberry pi 5:
 
-> [!INFO]
+> [!NOTE]
 > Prebuilt for arm/x64 https://github.com/simonjur/x1206-docker-nodejs-rpi5-monitor/pkgs/container/x1206-docker-nodejs-rpi5-monitor%2Fx1206-nodejs-exporter on ghcr.io
 >
 > ```bash
