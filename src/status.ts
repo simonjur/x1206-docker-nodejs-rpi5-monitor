@@ -41,4 +41,4 @@ async function run(json: boolean) {
 
 const options = program.opts();
 
-run(options.json);
+await run(options.json);
