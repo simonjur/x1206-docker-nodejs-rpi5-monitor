@@ -30,6 +30,7 @@ WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 COPY --from=builder /usr/src/app/package*.json ./
-COPY . .
+COPY ./src ./src
+COPY ./bin ./bin
 
 ENTRYPOINT ["node", "bin/exporter.ts"]
