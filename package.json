@@ -33,7 +33,7 @@
         "@eslint/json": "^0.14.0",
         "@types/node": "^25.0.0",
         "@vitest/coverage-v8": "^4.0.15",
-        "eslint": "^9.39.1",
+        "eslint": "^9.39.2",
         "globals": "^16.5.0",
         "jiti": "^2.6.1",
         "prettier": "3.7.4",
